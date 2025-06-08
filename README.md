@@ -1,3 +1,9 @@
+# The content of this github:
+- The .csv files are the saved and altered dataframes from the main experiment. These hold the results, calculated mean, standardeviation, min and max values.
+- The .png files are all the resulting graphs.
+- The graphs are made by executing: plotresults.py, which is done automatically at the end of the: ShortCutExperiment.py, file which performs the main experiment.
+- The other: ShortCut....py, files hold the classes for the agents and environment.
+
 # How to get the results used in this thesis:
 
 To perform the main experiment and generate the graphs, run: ShortCutExperiment.py
