@@ -54,7 +54,7 @@ class LearningCurvePlot:
     def save(self,name='test.png'):
         ''' name: string for filename of saved figure '''
         self.ax.legend()
-        self.fig.subplots_adjust(left=0.2) #hier
+        self.fig.subplots_adjust(left=0.2)
         self.fig.savefig(name,dpi=300)
 
 class ComparisonPlot:
