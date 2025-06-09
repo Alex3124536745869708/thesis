@@ -79,14 +79,14 @@ def calculate_mean_std_min_max():
                     end_col_idx -= 1 #because the time dataframes do not have an index column
 
                     # calculate the mean, standard deviation, minimum and maximum per timestep
-                    mean = df_time[df_time.columns[start_col_idx:end_col_idx]].mean(axis=1) # get the mean
-                    df_time[f"{env},{epsilon},{alpha},mean"] = mean/1000000000 #convert from nanosecond to second, so the mean is in sec but the raw data is in nano sec
-                    std = df_time[df_time.columns[start_col_idx:end_col_idx]].std(axis=1)
-                    df_time[f"{env},{epsilon},{alpha},std"] = std/1000000000 #convert from nanosecond to second
-                    min = df_time[df_time.columns[start_col_idx:end_col_idx]].min(axis=1)
-                    df_time[f"{env},{epsilon},{alpha},min"] = min/1000000000 #convert from nanosecond to second
-                    max = df_time[df_time.columns[start_col_idx:end_col_idx]].max(axis=1)
-                    df_time[f"{env},{epsilon},{alpha},max"] = max/1000000000 #convert from nanosecond to second
+                    mean = (df_time[df_time.columns[start_col_idx:end_col_idx]].mean(axis=1))/1000000000 # get the mean and convert from nanosecond to second, so the mean is in sec but the raw data is in nano sec
+                    df_time[f"{env},{epsilon},{alpha},mean"] = mean
+                    std = (df_time[df_time.columns[start_col_idx:end_col_idx]].std(axis=1))/1000000000 #convert from nanosecond to second
+                    df_time[f"{env},{epsilon},{alpha},std"] = std
+                    min = (df_time[df_time.columns[start_col_idx:end_col_idx]].min(axis=1))/1000000000 #convert from nanosecond to second
+                    df_time[f"{env},{epsilon},{alpha},min"] = min
+                    max = (df_time[df_time.columns[start_col_idx:end_col_idx]].max(axis=1))/1000000000 #convert from nanosecond to second
+                    df_time[f"{env},{epsilon},{alpha},max"] = max
 
                     LCtime.add_curve(y=smooth(mean,window=smoothing_window),std=std,\
                                         label=f"env = {env}",annotation=False) # add time curve to plot
@@ -387,6 +387,18 @@ def all_std_windy_vs():
         LCtime.save(name=f'allstdWindytime.png') # save plot
 
 
+def get_average_average_timeduration():
+    print("The means of the mean time durations:")
+    for agent in agent_list:
+        _, df_time = select_result_data(agent)
+        for env in env_list:
+            for epsilon in epsilon_list:
+                for alpha in alpha_list:
+                    print(f"agent: {agent}, env: {env}")
+                    mean_of_means = df_time[f"{env},{epsilon},{alpha},mean"].mean(axis=0) # mean of the column
+                    print(f"{mean_of_means} seconds")
+                    
+
 # make the evironment into shorter strings for naming and check if the envs are valid
 for env in env_list:
     if str(env) == "<class 'ShortCutEnvironment.ShortcutEnvironment'>":
@@ -397,6 +409,7 @@ for env in env_list:
         raise ValueError(f"{env} is an invalid environment for the plotting of graphs. Possibly update the make_graphs function.")
 env_list = ["NoWind","Windy"]
 
+# make graphs
 calculate_mean_std_min_max()
 individual_agent_env_graphs()
 make_comparison_per_env_graphs()
@@ -405,3 +418,8 @@ all_mm_nowind_vs()
 all_mm_windy_vs()
 all_std_nowind_vs()
 all_std_windy_vs()
+
+# print all averages of average time duration for all agents in all environments
+get_average_average_timeduration()
+
+
