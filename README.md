@@ -1,3 +1,6 @@
+# IMPORTANT
+This code uses huggingface models. To delete the downloaded LLM's delete the huggingface cache folder at location C:\Users\<username>\.cache\huggingface on windows and ~/.cache/huggingface on Linux.
+
 # The content of this github:
 - The .csv files are the saved and altered dataframes from the main experiment. These hold the results, calculated mean, standardeviation, min and max values.
 - The .png files are all the resulting graphs.
