@@ -1,0 +1,2871 @@
+﻿To get the results of Tiny-Llama for this experiment, execute LLM_output_test.py.
+To get the results of Qwen3, do the following:
+1. Use this link in your browser: https://huggingface.co/chat/settings/Qwen/Qwen3-235B-A22B
+2. During this test, when it asks for a hugging face account, log in or create an account and confirm your email address.
+3. Click on: New chat
+4. Copy the corresponding prompt and paste it in the prompt box (where it says: ask anything)
+5. The prompt box will be empty, but the pasted prompt can be seen as pasted content above the prompt box.
+6. To generate an answer, type: continue, in the prompt box and hit enter.
+7. Afterwards you should see the output of the LLM.
+
+
+Prompt 3
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 1 to 25, structured as follows:
+Top-left corner: State 1.
+Top-right corner: State 5.
+Bottom-left corner: State 21.
+Bottom-right corner: State 25.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves down →
+Response: "State: 6, Action: Agent moves down, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves left →
+Response: "State: 6, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves up →
+Response: "State: 6, Action: Agent moves up, Reward: -1, Next state: 1."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 15, Action: Agent moves up.
+
+
+
+
+Output Tiny-Llama
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+"State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+
+
+
+
+Prompt 4
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 1 to 25, structured as follows:
+Top-left corner: State 1.
+Top-right corner: State 5.
+Bottom-left corner: State 21.
+Bottom-right corner: State 25.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves down →
+Response: "State: 6, Action: Agent moves down, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves left →
+Response: "State: 6, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves up →
+Response: "State: 6, Action: Agent moves up, Reward: -1, Next state: 1."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 15, Action: Agent moves right.
+
+
+
+
+Output Tiny-Llama
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+Output Qwen3
+State: 15, Action: Agent moves right, Reward: -1, Next state: 15.
+
+
+
+
+Prompt 5
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 1 to 25, structured as follows:
+Top-left corner: State 1.
+Top-right corner: State 5.
+Bottom-left corner: State 21.
+Bottom-right corner: State 25.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves down →
+Response: "State: 6, Action: Agent moves down, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves left →
+Response: "State: 6, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves up →
+Response: "State: 6, Action: Agent moves up, Reward: -1, Next state: 1."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 20, Action: Agent moves up.
+
+
+
+
+Output Tiny-Llama
+Response: "State: 20, Action: Agent moves up, Reward: 1."
+
+
+State: 20, Action: Agent moves up.
+Response: "State: 20, Action: Agent
+
+
+
+
+Output Qwen3
+State: 20, Action: Agent moves up, Reward: -1, Next state: 15.
+
+
+
+
+
+
+Prompt 6
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 1 to 25, structured as follows:
+Top-left corner: State 1.
+Top-right corner: State 5.
+Bottom-left corner: State 21.
+Bottom-right corner: State 25.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 10, Action: Agent moves up.
+
+
+
+
+Output Tiny-Llama
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+Circumstance State: 10, Action: Agent moves up, Reward: -1, Next state: 10.
+
+
+Prompt 6.5
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 1 to 25, structured as follows:
+Top-left corner: State 1.
+Top-right corner: State 5.
+Bottom-left corner: State 21.
+Bottom-right corner: State 25.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 10, Action: Agent moves right.
+   
+
+
+Output Tiny-Llama
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+Circumstance State: 10, Action: Agent moves right, Reward: -1, Next state: 10.
+
+
+
+
+Prompt 7
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 1 to 25, structured as follows:
+Top-left corner: State 1.
+Top-right corner: State 5.
+Bottom-left corner: State 21.
+Bottom-right corner: State 25.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 15, Action: Agent moves down.
+
+
+
+
+Output Tiny-Llama
+Response: "State: 15, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 15, Action: Agent moves down, Reward: -1, Next state: 20.
+
+
+
+
+Prompt 8
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 1 to 25, structured as follows:
+Top-left corner: State 1.
+Top-right corner: State 5.
+Bottom-left corner: State 21.
+Bottom-right corner: State 25.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 13, Action: Agent moves down.
+
+
+
+
+Output Tiny-Llama
+Response: "State: 13, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 13, Location: (3,3), Action: Agent moves down, Reward: -1, Next state: 18, Next Location: (4,3).
+
+
+
+
+
+
+Prompt 9
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 0 to 24, structured as follows:
+Top-left corner: State 0.
+Top-right corner: State 4.
+Bottom-left corner: State 20.
+Bottom-right corner: State 24.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves down →
+Response: "State: 6, Action: Agent moves down, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves left →
+Response: "State: 6, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves up →
+Response: "State: 6, Action: Agent moves up, Reward: -1, Next state: 1."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 15, Action: Agent moves up.
+
+
+
+
+Output of Tiny-Llama:
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 15, Action: Agent moves up, Reward: -1, Next state: 10.
+
+
+
+
+Prompt 10
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 0 to 24, structured as follows:
+Top-left corner: State 0.
+Top-right corner: State 4.
+Bottom-left corner: State 20.
+Bottom-right corner: State 24.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves down →
+Response: "State: 6, Action: Agent moves down, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves left →
+Response: "State: 6, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves up →
+Response: "State: 6, Action: Agent moves up, Reward: -1, Next state: 1."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 15, Action: Agent moves right.
+
+
+
+
+Output Tiny-Llama
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 15, Action: Agent moves right, Reward: -1, Next state: 16.
+
+
+
+
+
+
+Prompt 11
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 0 to 24, structured as follows: 
+Top-left corner: State 0. 
+Top-right corner: State 4. 
+Bottom-left corner: State 20. 
+Bottom-right corner: State 24. 
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves down →
+Response: "State: 6, Action: Agent moves down, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves left →
+Response: "State: 6, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 6."
+
+
+State: 6, Action: Agent moves up →
+Response: "State: 6, Action: Agent moves up, Reward: -1, Next state: 1."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 20, Action: Agent moves up.
+
+
+
+
+Output Tiny-Llama
+State: 20, Action: Agent moves up.
+Response: "State: 20, Action: Agent moves up, Reward: 1, Next state: 21."
+
+
+State: 21, Action: Agent moves left.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 20, Action: Agent moves up, Reward: -1, Next state: 15.
+
+
+
+
+
+
+Prompt 12
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 0 to 24, structured as follows:
+Top-left corner: State 0.
+Top-right corner: State 4.
+Bottom-left corner: State 20.
+Bottom-right corner: State 24.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 10, Action: Agent moves up.
+
+
+
+
+Output of Tiny-Llama:
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+Circumstance State: 10, Action: Agent moves up, Reward: -1, Next state: 10.
+
+
+
+
+Prompt 12.5
+"Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 0 to 24, structured as follows:
+Top-left corner: State 0.
+Top-right corner: State 4.
+Bottom-left corner: State 20.
+Bottom-right corner: State 24.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 10, Action: Agent moves right.
+
+
+
+
+Output of Tiny-Llama:
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 10, Action: Agent moves right, Reward: -1, Next state: 10.
+
+
+
+
+Prompt 13
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 0 to 24, structured as follows:
+Top-left corner: State 0.
+Top-right corner: State 4.
+Bottom-left corner: State 20.
+Bottom-right corner: State 24.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 15, Action: Agent moves down.
+
+
+
+
+Output of Tiny-Llama:
+Response: "State: 15, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 15, Action: Agent moves down, Reward: -1, Next state: 20.
+
+
+
+
+
+
+Prompt 14
+Role:
+You are an AI that simulates an environment for model based reinforcement learning.
+          
+Environment Rules:
+The agent is in a 5×5 grid maze with states numbered from 0 to 24, structured as follows:
+Top-left corner: State 0.
+Top-right corner: State 4.
+Bottom-left corner: State 20.
+Bottom-right corner: State 24.
+The agent moves up, down, left, or right, but cannot move outside the grid.
+Each move results in a reward of -1 unless otherwise specified.
+Use past interactions if available.
+
+
+If the action is new, apply logical reasoning based on the grid structure:   
+Moving left decreases the state number by 1, unless at the left boundary.
+Moving right increases the state number by 1, unless at the right boundary.
+Moving up decreases the state by 5, unless at the top boundary.
+Moving down increases the state by 5, unless at the bottom boundary.
+Circumstance at the beginning of the line means that YOU should reason with the effect the wind could have on the outcome of the action.
+
+
+You must return the following after an action:
+state, location, action, reward, next_state, next_location.
+                    
+Past Interactions:
+    Context: The action from a certain state might result in a different next_state than the following action because of environment circumstanses.
+    In case this happens, write: "Circumstance" in the output.
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves down →
+Response: "State: 5, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves down →
+Response: "State: 10, Action: Agent moves down, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves left →
+Response: "State: 10, Action: Agent moves left, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves right →
+Response: "State: 10, Action: Agent moves right, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves right →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 21."
+
+
+State: 21, Action: Agent moves left →
+Response: "State: 21, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves left →
+Response: "State: 20, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves right, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves left →
+Response: "State: 15, Action: Agent moves left, Reward: -1, Next state: 20."
+
+
+State: 20, Action: Agent moves up →
+Response: "State: 20, Action: Agent moves up, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves right →
+Response: "State: 15, Action: Agent moves right, Reward: -1, Next state: 16."
+
+
+State: 16, Action: Agent moves left →
+Response: "State: 16, Action: Agent moves left, Reward: -1, Next state: 15."
+
+
+State: 15, Action: Agent moves up →
+Response: "State: 15, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up →
+Response: "State: 10, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves up →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves left →
+Response: "State: 5, Action: Agent moves left, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves right, Reward: -1, Next state: 5."
+
+
+State: 5, Action: Agent moves right →
+Response: "State: 5, Action: Agent moves up, Reward: -1, Next state: 6."
+
+
+Now Continue:
+Follow past interaction patterns if available. If the interaction is new, use the movement rules to determine the correct outcome.
+
+
+State: 13, Action: Agent moves down.
+
+
+
+
+Output of Tiny-Llama
+Response: "State: 13, Action: Agent moves down, Reward: -1, Next state: 10."
+
+
+State: 10, Action: Agent moves up.
+Response: "State:
+
+
+
+
+Output Qwen3
+State: 13, Location: (2,3), Action: Agent moves down, Reward: -1, Next state: 18, Next Location: (3,3).

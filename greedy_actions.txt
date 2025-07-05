@@ -1,0 +1,36 @@
+Agent: Dyna_LLM in environment: <class 'ShortCutEnvironment.ShortcutEnvironment'>, first time after 601 timesteps:
+0<^^^
+^^000
+^00>0
+>>>^0
+>^000
+Agent: Dyna_LLM in environment: <class 'ShortCutEnvironment.WindyShortcutEnvironment'>, first time after 601 timesteps:
+00000
+<0000
+^0000
+^^000
+<<000
+Agent: Q-learning in environment: <class 'ShortCutEnvironment.ShortcutEnvironment'>, first time after 601 timesteps:
+0v>^>
+<>00v
+>00>0
+v<>>0
+<^000
+Agent: Q-learning in environment: <class 'ShortCutEnvironment.WindyShortcutEnvironment'>, first time after 601 timesteps:
+0^000
+<v000
+^0000
+^<000
+^^000
+Agent: Dyna_Q in environment: <class 'ShortCutEnvironment.ShortcutEnvironment'>, first time after 601 timesteps:
+0>>>v
+>^00v
+v00>0
+>>>^0
+^^000
+Agent: Dyna_Q in environment: <class 'ShortCutEnvironment.WindyShortcutEnvironment'>, first time after 601 timesteps:
+0>>>v
+>^00>
+^00>0
+^<000
+^<00^
